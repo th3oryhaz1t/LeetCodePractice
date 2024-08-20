@@ -1,0 +1,12 @@
+function sumFibs(num) {
+  let fib = [0,1];
+  let i=1;
+  while ((fib[i]+fib[i-1])<=num){
+    fib[i+1] = fib[i]+fib[i-1];
+    i++;
+  }
+  return fib.filter(num => num%2 !==0).reduce((total, fibNum) => total + fibNum, 0);
+}
+
+console.log(sumFibs(4));
+console.log(sumFibs(75025));
